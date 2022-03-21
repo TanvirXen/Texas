@@ -15,7 +15,6 @@ const db = firebase.firestore();
 
 function Blog(props) {
 	const post = JSON.parse(props.data);
-	 window.alert(post.thumbnail);
 	return (
 		<div>
 			<Navbar />

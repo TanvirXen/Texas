@@ -19,7 +19,6 @@ const db = firebase.firestore();
 function Brand(props) {
 	const post = JSON.parse(props.data);
     const card = props.card;
-	 window.alert(card);
     var settings = {
 		dots: false,
 		infinite: false,
@@ -131,9 +130,8 @@ function Brand(props) {
                 <Col md={11} className='mggy'>
                 <p className="t2s1 spds" style={{color:'#002169'}}>Products by the brand</p>
         
-                <div className="row">
+               
 								{support}
-							</div>
                 </Col>
                   
                 </Row>

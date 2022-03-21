@@ -10,13 +10,16 @@ import {Col} from 'react-bootstrap'
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
 import Router from "next/router";
+import Link from 'next/link'
 export default function CardF({name,url,category,origin}) {
 
 
 
 	return (
-<Col  xs={12} md={6} lg={4} xl={3} style={{paddingRight:'10px'}}>
-<Card style={{filter:'drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.08))',cursor:'pointer', backgroundColor:'#F4F6F9',borderRadius:'8px',marginTop:'16px'}} key={name} href={'brands/'+name}>
+<Col  xs={12} md={6} lg={4} xl={3} style={{paddingRight:'10px'}} >
+<Link href={'brands/'+name}>
+<a >
+<Card style={{filter:'drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.08))',cursor:'pointer', backgroundColor:'#F4F6F9',borderRadius:'8px',marginTop:'16px'}} key={name} >
 			<CardMedia component="img" height="250" image={url} alt="image" />
 			<CardContent >
 <div style={{marginRight:'16px',marginLeft:'16px'}}>
@@ -38,6 +41,8 @@ export default function CardF({name,url,category,origin}) {
             <div style={{display:'flex',justifyContent:'center',marginBottom:'16px'}}>
             </div>
 		</Card>
+</a>
+</Link>
 </Col>
 	);
 }
