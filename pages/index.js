@@ -201,6 +201,7 @@ export default function Home() {
 		<div>
 			<Head>
 				<title>Texas- Home </title>
+				<meta name="google-site-verification" content="NDv76VQOyFym8ToQYWj9HKlCdFr2_RQh1IiWlaWLEj4" />
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 				<link
 					rel="stylesheet"
