@@ -7,7 +7,7 @@ export const getServerSideProps = ({ res }) => {
   const baseUrl = {
     development: "http://localhost:3000",
     production: "https://www.texsasbd.com/",
-  }[process.env.NODE_ENV];
+  }[production];
 
   const staticPages = fs
     .readdirSync("pages")
