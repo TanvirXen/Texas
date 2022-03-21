@@ -4,9 +4,7 @@ import { useState } from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { Container, Row, Col } from "react-bootstrap";
-import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import Brochure from "../../components/Brochure";
 import LanguageIcon from "@mui/icons-material/Language";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
@@ -14,6 +12,8 @@ import CardE from "../../components/cardE";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import Head from "next/head";
+import Image from 'next/image'
 const db = firebase.firestore();
 
 function Brand(props) {
@@ -89,6 +89,25 @@ function Brand(props) {
 	}
 	return (
 		<div>
+			<Head>
+			<title>{"Texas-"+post.name}</title>
+			<meta name="title" content={"Texas-"+post.name }/>
+				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+				<meta property="og:type" content="website" />
+				<meta property="og:url" content="https://www.texsasbd.com/" />
+				<meta
+					property="og:title"
+					content={"Texas-"+post.name }
+				/>
+				<meta
+					property="og:description"
+					content={post.description}
+				/>
+				<meta
+					property="og:image"
+					content={post.logo}
+				/>
+			</Head>
 			<Navbar />
 			<Container style={{ minHeight: "56vh" ,paddingTop:'60px' }}>
 				<Row>
@@ -96,7 +115,7 @@ function Brand(props) {
 					<Col md={10}>
 						<div className="rowx margin60t" >
 							<Col xs={12} md={3} >
-								<img src={post.logob} alt="" className="centerM" style={{filter: "drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.08))",width:'100%'}}/>
+								<img src={post.logob} alt="" className="centerM" style={{filter: "drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.08))",width:'100%',height:'auto'}}/>
 							</Col>
 							<Col md={1}></Col>
 							<Col md={8}>

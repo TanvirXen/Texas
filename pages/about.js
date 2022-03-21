@@ -1,11 +1,31 @@
 import { Container, Row, Col } from "react-bootstrap";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import Image from "next/image";
-import ship from "../public/shipment.png";
+import meta from '../../public/meta.png'
+import Head from "next/head";
 export default function About() {
 	return (
 		<div>
+			<Head>
+			<title>Texas- Products </title>
+				<meta name="title" content="Texas- Products" />
+				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+				<meta property="og:type" content="website" />
+				<meta property="og:url" content="https://www.texsasbd.com/" />
+				<meta
+					property="og:title"
+					content="Texas- Products"
+				/>
+				<meta
+					property="og:description"
+					content="Connecting you to the world’s leading Textile Solutions with top class service."
+				/>
+				<meta
+					property="og:image"
+					content={meta}
+				/>
+
+			</Head>
 			<Navbar />
 			<Container className="abtHero">
 				<Row>
@@ -197,36 +217,6 @@ export default function About() {
 						</p>
 					</Col>
 					<Col md={3}></Col>
-					<Col md={1}></Col>
-					<Col md={10}>
-<Row>
-<Col md={4}>
-                            <div><img src="/anik.jpg" alt=""  style={{ width: "95%", height: "auto" }}/></div>
-                            <div>
-                            <p className="s1" style={{ color: "#002169" }}>MD. Amirul Islam</p>
-                            <p className="b1" style={{ color: "#526899",paddingBottom:'18px' }}>Managing Director</p>
-                            </div>
-                            </Col>
-                            <Col md={4}>
-                            <div><img src="/anik.jpg" alt=""  style={{ width: "95%", height: "auto" }}/></div>
-                            <div>
-                            <p className="s1" style={{ color: "#002169" }}>MD. Amirul Islam</p>
-                            <p className="b1" style={{ color: "#526899" ,paddingBottom:'18px'}}>Managing Director</p>
-                            </div>
-                            </Col>
-                            <Col md={4}>
-                            <div><img src="/anik.jpg" alt=""  style={{ width: "95%", height: "auto" }}/></div>
-                            <div>
-                            <p className="s1" style={{ color: "#002169" }}>MD. Amirul Islam</p>
-                            <p className="b1" style={{ color: "#526899",paddingBottom:'38px' }}>Managing Director</p>
-                            </div>
-                            </Col>
-</Row>
-                        
-                        
-                        
-                        </Col>
-					<Col md={1}></Col>
 				</Row>
 			</Container>
 			<Footer />

@@ -7,9 +7,10 @@ import firebase from "firebase/app";
 import Router from "next/router";
 import CardP from "../../components/cardP";
 import { useState, useEffect } from "react";
-import {DataContext} from '../../components/context'
+import { DataContext } from "../../components/context";
 import { useContext } from "react";
-import Pagination from '@mui/material/Pagination';
+import Pagination from "@mui/material/Pagination";
+import meta from '../../public/meta.png'
 export default function Product() {
 	const db = firebase.firestore();
 	const value = useContext(DataContext);
@@ -19,7 +20,7 @@ export default function Product() {
 	const [CatQ, setCatQ] = useState("");
 	const [BrandQ, setBrandQ] = useState("");
 	async function fetchProduct() {
-		setCards(value.value)
+		setCards(value.value);
 	}
 	async function querydata(e) {
 		let obj = [];
@@ -35,7 +36,7 @@ export default function Product() {
 				setBrandQ("");
 			})
 			.catch((error) => {
-				 window.alert("Error getting documents: ", error);
+				window.alert("Error getting documents: ", error);
 			});
 	}
 
@@ -53,12 +54,13 @@ export default function Product() {
 				setCatQ("");
 			})
 			.catch((error) => {
-				 window.alert("Error getting documents: ", error);
+				window.alert("Error getting documents: ", error);
 			});
 	}
 	async function fetchBrands() {
 		await db
-			.collection("Aggr").doc('Brands')
+			.collection("Aggr")
+			.doc("Brands")
 			.get()
 			.then((querySnapshot) => {
 				setBrands(querySnapshot.data().List);
@@ -66,7 +68,8 @@ export default function Product() {
 	}
 	async function fetchCategory() {
 		await db
-			.collection("Aggr").doc('Category')
+			.collection("Aggr")
+			.doc("Category")
 			.get()
 			.then((querySnapshot) => {
 				setnnCat(querySnapshot.data().List);
@@ -81,7 +84,24 @@ export default function Product() {
 		<div>
 			<Head>
 				<title>Texas- Products </title>
+				<meta name="title" content="Texas- Products" />
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+				<meta property="og:type" content="website" />
+				<meta property="og:url" content="https://www.texsasbd.com/" />
+				<meta
+					property="og:title"
+					content="Texas- Products"
+				/>
+				<meta
+					property="og:description"
+					content="Connecting you to the world’s leading Textile Solutions with top class service."
+				/>
+				<meta
+					property="og:image"
+					content={meta}
+				/>
+
+				
 			</Head>
 			<div>
 				<Navbar />
@@ -107,7 +127,7 @@ export default function Product() {
 							<p style={{ color: "#002169" }} className="s2">
 								Sort By Category
 							</p>
-							<div style={{ display: "grid" }} className='speciala'>
+							<div style={{ display: "grid" }} className="speciala">
 								{nnCat.map((e) => {
 									return (
 										<span
@@ -115,7 +135,7 @@ export default function Product() {
 											className={
 												"btnp btn1 " + (CatQ == e ? "producta" : "product")
 											}
-                      style={{marginTop:'16px'}}
+											style={{ marginTop: "16px" }}
 											onClick={() => {
 												setCatQ(e);
 												querydata(e);
@@ -131,12 +151,12 @@ export default function Product() {
 							<p style={{ color: "#002169" }} className="s2">
 								Sort By Brand
 							</p>
-							<div style={{ display: "grid" }} className='speciala'>
+							<div style={{ display: "grid" }} className="speciala">
 								{brands.map((e) => {
 									return (
 										<span
 											key={e.name}
-                      style={{marginTop:'16px'}}
+											style={{ marginTop: "16px" }}
 											className={
 												"btnp btn1 " +
 												(BrandQ == e.name ? "producta" : "product")
@@ -151,9 +171,16 @@ export default function Product() {
 									);
 								})}
 							</div>
-              <br />
-              <br />
-              <a className="btnp btn1" style={{ border:'2px solid #FED2A4', color: "#FD8204" }} onClick={()=>fetchProduct()}> RESET</a>
+							<br />
+							<br />
+							<a
+								className="btnp btn1"
+								style={{ border: "2px solid #FED2A4", color: "#FD8204" }}
+								onClick={() => fetchProduct()}
+							>
+								{" "}
+								RESET
+							</a>
 							<br />
 							<br />
 						</Col>
@@ -178,7 +205,6 @@ export default function Product() {
 							</div>
 							<br />
 							<br />
-					
 						</Col>
 						<Col md={1}></Col>
 					</Row>

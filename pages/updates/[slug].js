@@ -11,12 +11,32 @@ import {
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Brochure from '../../components/Brochure'
+import Head from "next/head";
 const db = firebase.firestore();
 
 function Blog(props) {
 	const post = JSON.parse(props.data);
 	return (
 		<div>
+						<Head>
+							<title>{"Texas-"+post.name}</title>
+			<meta name="title" content={"Texas-"+post.name }/>
+				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+				<meta property="og:type" content="website" />
+				<meta property="og:url" content="https://www.texsasbd.com/" />
+				<meta
+					property="og:title"
+					content={"Texas-"+post.name }
+				/>
+				<meta
+					property="og:description"
+					content={post.description}
+				/>
+				<meta
+					property="og:image"
+					content={post.thumbnail[0]}
+				/>
+			</Head>
 			<Navbar />
 			<Container>
 				<Row>

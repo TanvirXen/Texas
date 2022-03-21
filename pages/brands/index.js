@@ -4,10 +4,10 @@ import { Container, Row, Col } from "react-bootstrap";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import firebase from "firebase/app";
-import Router from "next/router";
 import CardF from "../../components/cardF";
 import { useState, useEffect } from "react";
 import Loader from "../../components/loader";
+import meta from '../../public/meta.png'
 const db = firebase.firestore();
 
 
@@ -34,7 +34,22 @@ const db = firebase.firestore();
 		<div>
 			<Head>
 				<title>Texas- Brands </title>
+				<meta name="title" content="Texas- Brands" />
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+				<meta property="og:type" content="website" />
+				<meta property="og:url" content="https://www.texsasbd.com/" />
+				<meta
+					property="og:title"
+					content="Texas- Brands"
+				/>
+				<meta
+					property="og:description"
+					content="Connecting you to the world’s leading Textile Solutions with top class service."
+				/>
+				<meta
+					property="og:image"
+					content={meta}
+				/>
 			</Head>
 			<div>
 				<Navbar />

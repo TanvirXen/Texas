@@ -6,7 +6,6 @@ import Footer from "../components/Footer";
 import Marquee from "react-easy-marquee";
 import { useState, useEffect, useRef } from "react";
 import firebase from "firebase/app";
-import ship from "../public/shipment.png";
 import nextR from "../public/arrowR.svg";
 import nextL from "../public/arrowL.svg";
 import Slider from "react-slick";
@@ -21,7 +20,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 // import "react-multi-carousel/lib/styles.css";
 import { DataContext } from "../components/context";
 import { useContext } from "react";
-
+import meta from '../public/meta.png'
 export default function Home() {
 	const db = firebase.firestore();
 	const slider = useRef(null);
@@ -234,8 +233,29 @@ export default function Home() {
 				/>
 				<link rel="manifest" href="/site.webmanifest" />
 				<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+				<link rel="preconnect" href="https://vitals.vercel-insights.com" />
+				<link rel="preconnect" href="https://fonts.googleapis.com" />
+				<link
+					rel="preconnect"
+					href="https://www.youtube.com/embed/NYF0bFkLxWA?autoplay=1&cc_load_policy=1&mute=1&loop=1"
+				/>
 				<meta name="msapplication-TileColor" content="#da532c" />
 				<meta name="theme-color" content="#ffffff"></meta>
+				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+				<meta property="og:type" content="website" />
+				<meta property="og:url" content="https://www.texsasbd.com/" />
+				<meta
+					property="og:title"
+					content="Texas- Home"
+				/>
+				<meta
+					property="og:description"
+					content="Connecting you to the world’s leading Textile Solutions with top class service."
+				/>
+				<meta
+					property="og:image"
+					content={meta}
+				/>
 			</Head>
 			<div>
 				<Navbar />
@@ -555,4 +575,3 @@ export default function Home() {
 		</div>
 	);
 }
-

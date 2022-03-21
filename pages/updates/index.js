@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import firebase from "firebase/app";
 import CardG from "../../components/cardG";
 import Loader from "../../components/loader";
+import meta from '../../public/meta.png'
+import Head from "next/head";
 const db = firebase.firestore();
 function Blog(props) {
 	const [Blog, setBlog] = useState([]);
@@ -28,6 +30,25 @@ function Blog(props) {
 
 	return (
 		<div>
+						<Head>
+				<title>Texas- Brands </title>
+				<meta name="title" content="Texas- Updates" />
+				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+				<meta property="og:type" content="website" />
+				<meta property="og:url" content="https://www.texsasbd.com/" />
+				<meta
+					property="og:title"
+					content="Texas- Updates"
+				/>
+				<meta
+					property="og:description"
+					content="Connecting you to the world’s leading Textile Solutions with top class service."
+				/>
+				<meta
+					property="og:image"
+					content={meta}
+				/>
+			</Head>
 			<Navbar />
 			<Container>
 				<Row>
