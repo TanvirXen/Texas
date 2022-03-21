@@ -21,13 +21,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 // import "react-multi-carousel/lib/styles.css";
 import { DataContext } from "../components/context";
 import { useContext } from "react";
-const sitemap =  require("nextjs-sitemap-generator");
-
-const fs =  require("fs");
-
-  
-
-const BUILD_ID = fs.readFileSync(".next/BUILD_ID").toString();
 
 export default function Home() {
 	const db = firebase.firestore();
@@ -195,9 +188,7 @@ export default function Home() {
 				});
 				setCards(obj);
 			})
-			.catch((error) => {
-	
-			});
+			.catch((error) => {});
 	}
 	useEffect(() => {
 		fetchBrands();
@@ -208,7 +199,10 @@ export default function Home() {
 		<div>
 			<Head>
 				<title>Texas- Home </title>
-				<meta name="google-site-verification" content="NDv76VQOyFym8ToQYWj9HKlCdFr2_RQh1IiWlaWLEj4" />
+				<meta
+					name="google-site-verification"
+					content="NDv76VQOyFym8ToQYWj9HKlCdFr2_RQh1IiWlaWLEj4"
+				/>
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 				<link
 					rel="stylesheet"
@@ -264,6 +258,7 @@ export default function Home() {
 											emulateTouch={true}
 											showThumbs={false}
 											dynamicHeight={true}
+											autoPlay={true}
 											width="100%"
 										>
 											<img src="/1.png" alt="" />
@@ -561,12 +556,18 @@ export default function Home() {
 	);
 }
 export async function getStaticPaths() {
+	const sitemap = require("nextjs-sitemap-generator");
+
+	const fs = require("fs");
+
+	const BUILD_ID = fs.readFileSync(".next/BUILD_ID").toString();
 	sitemap({
 		baseUrl: "https://www.texsasbd.com/",
-		// If you are using Vercel platform to deploy change the route to /.next/serverless/pages 
-		pagesDirectory: __dirname + "/.next/serverless/pages " + BUILD_ID + "/pages",
+		// If you are using Vercel platform to deploy change the route to /.next/serverless/pages
+		pagesDirectory:
+			__dirname + "/.next/serverless/pages " + BUILD_ID + "/pages",
 		targetDirectory: "public/",
 		ignoredExtensions: ["js", "map"],
 		ignoredPaths: ["assets"], // Exclude everything that isn't static page
-	  });
+	});
 }
