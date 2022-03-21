@@ -7,7 +7,7 @@ export const getServerSideProps = ({ res }) => {
   const baseUrl = {
     development: "http://localhost:3000",
     production: "https://www.texsasbd.com/",
-  }[production];
+  }[process.env.NODE_ENV];
 
   const staticPages = fs
   .readdirSync({
@@ -45,8 +45,9 @@ export const getServerSideProps = ({ res }) => {
   res.setHeader("Content-Type", "text/xml");
   res.write(sitemap);
   res.end();
-
+  console.log(sitemap)
   return {
+      
     props: {},
   };
 };
