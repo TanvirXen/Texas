@@ -392,9 +392,9 @@ export default function Home() {
 									<p className="overline mggg ghk" style={{ color: "#002169" }}>
 										Our values
 									</p>
-									<h3 className="t2 ss1 ghk" style={{ color: "#002169" }}>
+									<h2 className="t2 ss1 ghk" style={{ color: "#002169" }}>
 										TEXSAS prioritise customer value creation over anything!
-									</h3>
+									</h2>
 								</Col>
 								<Col md={6}>
 									<div className="ghk">
@@ -497,12 +497,12 @@ export default function Home() {
 								<div className="mgdn">
 									{support}
 									<div style={{ marginTop: "16px" }} className="none">
-										<a onClick={() => slider?.current?.slickPrev()}>
+										<span onClick={() => slider?.current?.slickPrev()}>
 											<Image src={nextL} alt="" />
-										</a>
-										<a onClick={() => slider?.current?.slickNext()}>
+										</span>
+										<span onClick={() => slider?.current?.slickNext()}>
 											<Image src={nextR} alt="" />
-										</a>
+										</span>
 									</div>
 								</div>
 							</div>
@@ -537,12 +537,12 @@ export default function Home() {
 										<CardR />
 									</Slider>
 									<div style={{ marginTop: "16px" }} className="none">
-										<a onClick={() => sliders?.current?.slickPrev()}>
+										<span onClick={() => sliders?.current?.slickPrev()}>
 											<Image src={nextL} alt="" />
-										</a>
-										<a onClick={() => sliders?.current?.slickNext()}>
+										</span>
+										<span onClick={() => sliders?.current?.slickNext()}>
 											<Image src={nextR} alt="" />
-										</a>
+										</span>
 									</div>
 								</div>
 							</div>
