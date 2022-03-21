@@ -12,9 +12,7 @@ export default function CardP({name,title,img,brand,pid}) {
 	return (
 <div>
 	
-<Card style={{filter:'drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.08))',borderRadius:'8px',marginTop:'16px',cursor:'pointer',height:'80%',marginBottom:'4px',marginRight:'16px'}} onClick={()=>{Router.push({
-  pathname: '/products/'+pid
-})}}>
+<Card style={{filter:'drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.08))',borderRadius:'8px',marginTop:'16px',cursor:'pointer',height:'80%',marginBottom:'4px',marginRight:'16px'}} href={'/products/'+pid}>
 			<CardMedia component="img" height="250" image={img} alt="image" />
 			<CardContent>
 				<p className="s1s2 nntext" style={{ color: "#002169" }}>

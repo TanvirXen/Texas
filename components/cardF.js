@@ -16,9 +16,7 @@ export default function CardF({name,url,category,origin}) {
 
 	return (
 <Col  xs={12} md={6} lg={4} xl={3} style={{paddingRight:'10px'}}>
-<Card style={{filter:'drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.08))',cursor:'pointer', backgroundColor:'#F4F6F9',borderRadius:'8px',marginTop:'16px'}} key={name} onClick={()=>Router.push({
-    pathname: 'brands/'+name
-})}>
+<Card style={{filter:'drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.08))',cursor:'pointer', backgroundColor:'#F4F6F9',borderRadius:'8px',marginTop:'16px'}} key={name} href={'brands/'+name}>
 			<CardMedia component="img" height="250" image={url} alt="image" />
 			<CardContent >
 <div style={{marginRight:'16px',marginLeft:'16px'}}>
