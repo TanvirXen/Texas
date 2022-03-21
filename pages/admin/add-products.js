@@ -6,7 +6,6 @@ import Head from "next/head";
 import { useState, useEffect } from "react";
 import TextField from "@mui/material/TextField";
 import add from "../../public/add.svg";
-import addTest from "../../public/addTest.png";
 import plus from "../../public/plus.svg";
 import firebase from "firebase/app";
 import { height } from "@mui/system";

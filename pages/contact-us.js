@@ -2,9 +2,10 @@ import { Container, Row, Col } from "react-bootstrap";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Image from 'next/image'
-import ship from "../public/shipment.png";
 import { InlineWidget } from "react-calendly";
 import { useEffect } from "react";
+import meta from '../public/meta.png'
+import Head from "next/head";
 export default function About() {
 
     useEffect(() => {
@@ -13,6 +14,26 @@ export default function About() {
     
 	return (
 		<div>
+            			<Head>
+			<title>Texas- Contacts</title>
+				<meta name="title" content="Texas- Contacts" />
+				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+				<meta property="og:type" content="website" />
+				<meta property="og:url" content="https://www.texsasbd.com/" />
+				<meta
+					property="og:title"
+					content="Texas- Contacts"
+				/>
+				<meta
+					property="og:description"
+					content="Connecting you to the world’s leading Textile Solutions with top class service."
+				/>
+				<meta
+					property="og:image"
+					content={meta}
+				/>
+
+			</Head>
 			<Navbar />
 			<Container>
 <Row style={{marginBottom:'70px'}}>

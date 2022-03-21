@@ -1,20 +1,20 @@
 import { Container, Row, Col } from "react-bootstrap";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import meta from '../../public/meta.png'
+import meta from '../public/meta.png'
 import Head from "next/head";
 export default function About() {
 	return (
 		<div>
 			<Head>
 			<title>Texas- Products </title>
-				<meta name="title" content="Texas- Products" />
+				<meta name="title" content="Texas- About" />
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 				<meta property="og:type" content="website" />
 				<meta property="og:url" content="https://www.texsasbd.com/" />
 				<meta
 					property="og:title"
-					content="Texas- Products"
+					content="Texas- About"
 				/>
 				<meta
 					property="og:description"
