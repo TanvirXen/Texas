@@ -21,6 +21,13 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 // import "react-multi-carousel/lib/styles.css";
 import { DataContext } from "../components/context";
 import { useContext } from "react";
+const sitemap =  require("nextjs-sitemap-generator");
+
+const fs =  require("fs");
+
+  
+
+const BUILD_ID = fs.readFileSync(".next/BUILD_ID").toString();
 
 export default function Home() {
 	const db = firebase.firestore();
@@ -552,4 +559,14 @@ export default function Home() {
 			</div>
 		</div>
 	);
+}
+export async function getStaticPaths() {
+	sitemap({
+		baseUrl: "https://www.texsasbd.com/",
+		// If you are using Vercel platform to deploy change the route to /.next/serverless/pages 
+		pagesDirectory: __dirname + "/.next/serverless/pages " + BUILD_ID + "/pages",
+		targetDirectory: "public/",
+		ignoredExtensions: ["js", "map"],
+		ignoredPaths: ["assets"], // Exclude everything that isn't static page
+	  });
 }
